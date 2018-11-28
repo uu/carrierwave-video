@@ -52,7 +52,7 @@ module CarrierWave
       end
 
       if opts[:video_bitrate] == :same
-        @options.format_options[:video_bitrate] = file.video_bitrate
+        @options.format_options[:video_bitrate] = file.video_bitrate / 1000
       end
 
       yield(file, @options.format_options) if block_given?
